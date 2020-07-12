@@ -1,0 +1,87 @@
+{
+  "name": "nestjs-lambda-starter",
+  "version": "0.1.0",
+  "description": "NestJS starter with AWS Lambda.",
+  "private": true,
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint '{src,apps,libs,test}/**/*.ts'",
+    "format": "eslint --fix '{src,apps,libs,test}/**/*.ts'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "migration:generate": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate -f src/typeorm/ormconfig.postgres.ts -n",
+    "migration:show": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:show -f src/typeorm/ormconfig.postgres.ts",
+    "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -f src/typeorm/ormconfig.postgres.ts",
+    "migration:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -f src/typeorm/ormconfig.postgres.ts",
+    "schema:log": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js schema:log -f src/typeorm/ormconfig.postgres.ts",
+    "doc": "compodoc -p tsconfig.json -s"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,mjs,jsx,ts,tsx}": "eslint"
+  },
+  "prettier": "@twihike/prettier-config",
+  "dependencies": {
+    "@nestjs/common": "7.3.2",
+    "@nestjs/core": "7.3.2",
+    "@nestjs/platform-express": "7.3.2",
+    "@nestjs/swagger": "4.5.12",
+    "@nestjs/typeorm": "7.1.0",
+    "aws-lambda": "1.0.6",
+    "aws-serverless-express": "3.3.8",
+    "class-transformer": "0.2.3",
+    "class-validator": "0.12.2",
+    "express": "4.17.1",
+    "helmet": "3.23.3",
+    "pg": "8.3.0",
+    "pluralize": "8.0.0",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "6.6.0",
+    "sqlite3": "5.0.0",
+    "swagger-ui-express": "4.1.4",
+    "typeorm": "0.2.25"
+  },
+  "devDependencies": {
+    "@compodoc/compodoc": "1.1.11",
+    "@nestjs/cli": "7.4.1",
+    "@nestjs/schematics": "7.0.1",
+    "@nestjs/testing": "7.3.2",
+    "@twihike/node-toolchain": "0.1.5",
+    "@types/express": "4.17.7",
+    "@types/jest": "26.0.4",
+    "@types/node": "14.0.22",
+    "@types/pluralize": "0.0.29",
+    "@types/supertest": "2.0.10",
+    "jest": "26.1.0",
+    "supertest": "4.0.2",
+    "ts-jest": "26.1.1",
+    "ts-loader": "8.0.0",
+    "tsconfig-paths": "3.9.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
