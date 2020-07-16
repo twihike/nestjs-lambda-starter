@@ -75,7 +75,7 @@ diff --git a/<function-name>-cloudformation-template.json b/<function-name>-clou
 +                    "TYPEORM_HOST": "your db host",
 +                    "TYPEORM_USERNAME": "your username",
 +                    "TYPEORM_PASSWORD": "your password",
-+                    "TYPEORM_DATABASE": "your db name",
++                    "TYPEORM_DATABASE": "your db name"
 
                  }
              },
