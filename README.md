@@ -1,6 +1,6 @@
 # nestjs-lambda-starter
 
-![CI status](https://github.com/twihike/nestjs-lambda-starter/workflows/ci/badge.svg)
+[![CI status](https://github.com/twihike/nestjs-lambda-starter/workflows/ci/badge.svg)](https://github.com/twihike/nestjs-lambda-starter/actions)
 
 [NestJS](https://github.com/nestjs/nest) framework starter with AWS Lambda.
 
