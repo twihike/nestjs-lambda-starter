@@ -1,3 +1,4 @@
+// eslint-disable-next-line unicorn/import-style
 import { join } from 'path';
 
 import { ValidationPipe } from '@nestjs/common';
